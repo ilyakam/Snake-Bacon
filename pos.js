@@ -19,19 +19,34 @@ randomPos = function() {
     Math.floor(Math.random() * size.y))
 }
 
-// TODO: Protect against flipping left/right and up/down:
 function headLeft(pos) {
-  return new Pos(-1, 0)
+  if (pos.y !== 0) {
+    return new Pos(-1, 0)
+  } else {
+    return pos
+  }
 }
 
 function headRight(pos) {
-  return new Pos(1, 0)
+  if (pos.y !== 0) {
+    return new Pos(1, 0)
+  } else {
+    return pos
+  }
 }
 
 function headUp(pos) {
-  return new Pos(0, -1)
+  if (pos.x !== 0) {
+    return new Pos(0, -1)
+  } else {
+    return pos
+  }
 }
 
 function headDown(pos) {
-  return new Pos(0, 1)
+  if (pos.x !== 0) {
+    return new Pos(0, 1)
+  } else {
+    return pos
+  }
 }
