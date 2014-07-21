@@ -11,7 +11,7 @@ function drawGame(size) {
 
 function fillCells(klass) {
   var game = $('#game')
-  return function(ps) { 
+  return function(ps) {
     game.find('.cell').removeClass(klass)
     for (var i in ps) {
       game.find('.row:eq('+ps[i].y+')')
@@ -25,7 +25,6 @@ var drawApple = fillCells('apple')
 var drawSnake = fillCells('snake')
 
 function logRestart() {
-  console.log('press')
   $('#log').html("Press 'r' to restart")
 }
 

@@ -10,19 +10,28 @@ function Pos (x, y) {
     return new Pos(
       (this.x + p.x + size.x) % size.x,
       (this.y + p.y + size.y) % size.y)
-  } 
+  }
 }
 
-randomPos = function() { 
+randomPos = function() {
   return new Pos(
     Math.floor(Math.random() * size.x),
     Math.floor(Math.random() * size.y))
 }
 
-function rotateRight(pos) {
-  return new Pos(-pos.y, pos.x)
+// TODO: Protect against flipping left/right and up/down:
+function headLeft(pos) {
+  return new Pos(-1, 0)
 }
 
-function rotateLeft(pos) {
-  return new Pos(pos.y, -pos.x)
+function headRight(pos) {
+  return new Pos(1, 0)
+}
+
+function headUp(pos) {
+  return new Pos(0, -1)
+}
+
+function headDown(pos) {
+  return new Pos(0, 1)
 }
